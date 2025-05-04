@@ -1,10 +1,10 @@
 import boto3
 
 for i in range(1, 5):
-    print(f"Creating bucket {i}...")
+    print(f"Creating bucket {i+5}...")
     # Create a unique bucket name
 
-    bucket_name = f"jensbucket123-{i}"  # <-- replace this with a unique name
+    bucket_name = f"jensbucket123-{i+5}"  # <-- replace this with a unique name
     region = 'us-west-2'
 
     # Create S3 client for the specified region
