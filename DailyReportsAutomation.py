@@ -43,7 +43,7 @@ def check_bucket_exists():
 
 def upload_file():
     local_folder = "./dailyDocs"
-    s3_prefix = "backup/"
+    s3_prefix = "daily-reports/"
 
     # Connect to S3
     s3 = boto3.resource("s3")
@@ -87,5 +87,5 @@ def list_files():
 
 
 check_bucket_exists()  # Call the function to check if the bucket exists
-#upload_file()  # Call the function to upload a file if the bucket exists
-# list_files()  # Call the function to list files in the bucket
+upload_file()  # Call the function to upload a file if the bucket exists
+list_files()  # Call the function to list files in the bucket
