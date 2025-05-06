@@ -1,6 +1,6 @@
 import boto3
 
-bucket_name = "jens-bucket-demo-1"
+bucket_name = "jens-bucket-demo-2"
 region = "us-west-2"
 
 
@@ -29,7 +29,6 @@ def check_bucket_exists():
     try:
         s3.head_bucket(Bucket=bucket_name)
         print(f"\n✅ Bucket '{bucket_name}' already exists in region '{region}'\n")
-        upload_file()  # Call the function to upload a file if the bucket exists
     except Exception as e:
         print(f"\n❌ Bucket '{bucket_name}' does not exist in region '{region}'\n")
         create_bucket()  # Call the function to create the bucket if it doesn't exist
@@ -64,4 +63,5 @@ def list_files():
     print("\n ~~~ End of Process ~~~\n")
 
 check_bucket_exists()  # Call the function to check if the bucket exists
+upload_file()  # Call the function to upload a file if the bucket exists
 list_files()  # Call the function to list files in the bucket
