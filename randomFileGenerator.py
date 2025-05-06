@@ -21,7 +21,7 @@ def random_filename(length=8):
     return f"demo{random_part}.txt"
 
 
-for _ in range(20):
+for _ in range(2): # Change this to create more files
     filename = random_filename()
     filepath = os.path.join(folder, filename)
 
